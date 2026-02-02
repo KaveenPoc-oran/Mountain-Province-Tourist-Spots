@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Mountain Province Tourism</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="auth-page">
     <div class="auth-container">
@@ -41,8 +41,9 @@
                     <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" required>
                 </div>
                 
+                <!-- Terms & Conditions -->
                 <div class="terms-checkbox">
-                    <input type="checkbox" id="terms" required>
+                    <input type="checkbox" id="terms" name="terms" required>
                     <label for="terms">I agree to the Terms & Conditions</label>
                 </div>
                 
@@ -57,32 +58,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            
-            if(password !== confirmPassword) {
-                alert('Passwords do not match!');
-                return;
-            }
-            
-            if(password.length < 8) {
-                alert('Password must be at least 8 characters long!');
-                return;
-            }
-            
-            if(!document.getElementById('terms').checked) {
-                alert('You must agree to the Terms & Conditions!');
-                return;
-            }
-            
-            // If all validations pass
-            window.location.href = 'index.html';
-        });
-    </script>
 </body>
 </html>

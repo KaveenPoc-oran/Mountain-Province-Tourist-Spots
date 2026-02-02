@@ -305,19 +305,69 @@ footer small {
     outline: none;
 }
 
-/* Form Options */
+/* Password Hint */
+.password-hint {
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: #888;
+}
+
+/* =========================
+   CHECKBOX FIXES
+========================= */
+/* Remember Me checkbox */
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.remember-me label {
+    margin: 0;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #444;
+    white-space: nowrap;
+}
+
+/* Terms & Conditions checkbox */
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 18px 0 22px;
+    font-size: 0.85rem;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.terms-checkbox label {
+    margin: 0;
+    cursor: pointer;
+    color: #444;
+    white-space: nowrap;
+}
+
+/* Form Options Layout */
 .form-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 12px 0 22px;
     font-size: 0.85rem;
-}
-
-.remember-me {
-    display: flex;
-    align-items: center;
-    gap: 6px;
 }
 
 .forgot-link {
@@ -328,31 +378,6 @@ footer small {
 
 .forgot-link:hover {
     text-decoration: underline;
-}
-
-/* Password Hint */
-.password-hint {
-    margin-top: 6px;
-    font-size: 0.75rem;
-    color: #888;
-}
-
-/* Terms Checkbox */
-.terms-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 18px 0 22px;
-    font-size: 0.85rem;
-}
-
-.terms-checkbox input[type="checkbox"] {
-    width: auto;
-}
-
-.terms-checkbox label {
-    margin-bottom: 0;
-    cursor: pointer;
 }
 
 /* Auth Button */
@@ -436,6 +461,10 @@ footer small {
         align-items: flex-start;
         gap: 10px;
     }
+    
+    .forgot-link {
+        margin-top: 5px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -453,6 +482,12 @@ footer small {
     
     .auth-box {
         padding: 20px 15px;
+    }
+    
+    .terms-checkbox label,
+    .remember-me label {
+        white-space: normal;
+        font-size: 0.8rem;
     }
 }
 
