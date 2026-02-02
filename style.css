@@ -1,0 +1,472 @@
+/* =========================
+   RESET & GLOBAL STYLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* =========================
+   MAIN PAGE STYLES
+========================= */
+body:not(.auth-page) {
+    background: linear-gradient(180deg, #f4f7fb, #e9eef5);
+    min-height: 100vh;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header-bg {
+    background: linear-gradient(120deg, #1d2671, #c33764);
+    color: #fff;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.header-bg h1 {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header-bg p {
+    opacity: 0.9;
+}
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+h2 {
+    font-weight: 700;
+    color: #1d2671;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 25px;
+    margin-top: 40px;
+}
+
+h2::after {
+    content: "";
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, #c33764, #1d2671);
+    display: block;
+    margin-top: 8px;
+    border-radius: 10px;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    background: #ffffff;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Card images */
+.spot-img {
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .spot-img {
+    transform: scale(1.08);
+}
+
+/* Card body */
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1d2671;
+    font-size: 1.25rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary {
+    background: linear-gradient(90deg, #1d2671, #c33764);
+    border: none;
+    border-radius: 30px;
+    padding: 8px 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #c33764, #1d2671);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Logout button */
+.logout-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 1000;
+    background: linear-gradient(135deg, #c33764, #1d2671);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+/* =========================
+   MODALS
+========================= */
+.modal-content {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.modal-header {
+    background: linear-gradient(90deg, #1d2671, #c33764);
+    color: white;
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+}
+
+.modal-header .btn-close:hover {
+    opacity: 1;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.modal-body img {
+    border-radius: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.modal-body h4 {
+    color: #1d2671;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.modal-body p {
+    margin-bottom: 10px;
+}
+
+.modal-body strong {
+    color: #c33764;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #1d2671;
+    color: #fff;
+    padding: 25px 0;
+    margin-top: 60px;
+    text-align: center;
+}
+
+footer small {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* =========================
+   AUTHENTICATION PAGES STYLES
+========================= */
+.auth-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.auth-box {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Auth Header */
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1d2671;
+    margin-bottom: 8px;
+}
+
+.auth-header p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Auth Form */
+.auth-form .form-group {
+    margin-bottom: 18px;
+}
+
+.auth-form label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.auth-form input:focus {
+    border-color: #c33764;
+    box-shadow: 0 0 0 3px rgba(195, 55, 100, 0.2);
+    outline: none;
+}
+
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0 22px;
+    font-size: 0.85rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.forgot-link {
+    text-decoration: none;
+    color: #c33764;
+    font-weight: 600;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* Password Hint */
+.password-hint {
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: #888;
+}
+
+/* Terms Checkbox */
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 18px 0 22px;
+    font-size: 0.85rem;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    width: auto;
+}
+
+.terms-checkbox label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+/* Auth Button */
+.btn-auth {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-auth:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Auth Footer */
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+}
+
+.auth-footer a {
+    color: #c33764;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+    /* Cards */
+    .card {
+        margin-bottom: 20px;
+    }
+    
+    .spot-img {
+        height: 200px;
+    }
+    
+    /* Header */
+    .header-bg h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* Section headings */
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Logout button */
+    .logout-btn {
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Auth pages */
+    .auth-box {
+        padding: 25px 20px;
+    }
+    
+    .auth-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-bg h1 {
+        font-size: 1.5rem;
+    }
+    
+    .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .auth-container {
+        padding: 10px;
+    }
+    
+    .auth-box {
+        padding: 20px 15px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .logout-btn,
+    .btn-primary,
+    .auth-page {
+        display: none !important;
+    }
+    
+    .card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
