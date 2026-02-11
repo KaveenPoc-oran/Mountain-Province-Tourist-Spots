@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h4><i class="fas fa-mountain"></i> Admin Panel</h4>
+                <p>Mountain Province Tourism</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="manage-spots.html"><i class="fas fa-map-marker-alt"></i> Manage Spots</a></li>
+                <li><a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <i class="fas fa-user-circle fa-2x"></i>
+                    <div>
+                        <strong id="adminName"></strong>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <h3>Dashboard</h3>
+                    <p id="welcomeMessage">Welcome back!</p>
+                </div>
+                <div class="top-bar-right">
+                    <a href="../tourist/index.html" target="_blank" class="btn btn-outline-primary">
+                        <i class="fas fa-external-link-alt"></i> View Tourist Site
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="row stats-row">
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-primary">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalSpots">0</h3>
+                            <p>Tourist Spots</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-success">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalMunicipalities">0</h3>
+                            <p>Municipalities</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-info">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalCategories">0</h3>
+                            <p>Categories</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="content-section">
+                <div class="section-header">
+                    <h4>Quick Actions</h4>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Add New Tourist Spot</h5>
+                                <p class="card-text">Create a new entry for a tourist destination.</p>
+                                <a href="manage-spots.html" class="btn btn-primary">Go to Manage Spots</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">View Public Site</h5>
+                                <p class="card-text">See how tourists experience the site.</p>
+                                <a href="../tourist/index.html" target="_blank" class="btn btn-outline-primary">Open Tourist Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/admin.js"></script>
+    <script>
+        // Redirect if not authenticated
+        if (!isAuthenticated()) {
+            window.location.href = 'login.html';
+        }
+
+        // Display admin name
+        const adminUser = JSON.parse(sessionStorage.getItem('adminUser') || '{}');
+        if (adminUser.name) {
+            document.getElementById('adminName').innerText = adminUser.name;
+            document.getElementById('welcomeMessage').innerText = `Welcome back, ${adminUser.name}!`;
+        }
+
+        // Load stats
+        function loadStats() {
+            const spots = getSpots();
+            document.getElementById('totalSpots').innerText = spots.length;
+            const municipalities = [...new Set(spots.map(s => s.municipality))];
+            document.getElementById('totalMunicipalities').innerText = municipalities.length;
+            const categories = [...new Set(spots.map(s => s.category))];
+            document.getElementById('totalCategories').innerText = categories.length;
+        }
+        loadStats();
+    </script>
+</body>
+</html>

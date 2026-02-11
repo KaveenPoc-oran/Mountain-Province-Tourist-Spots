@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts - Mountain Province</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .emergency-card { border-left: 5px solid; transition: transform 0.3s; }
+        .emergency-card:hover { transform: translateY(-5px); }
+        .emergency-medical { border-left-color: #dc3545; }
+        .emergency-police { border-left-color: #0d6efd; }
+        .emergency-fire { border-left-color: #fd7e14; }
+        .emergency-tourism { border-left-color: #198754; }
+        .quick-call { display: flex; justify-content: center; gap: 20px; margin: 30px 0; }
+        .call-btn { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s; }
+        .call-btn:hover { transform: scale(1.1); }
+        .call-ambulance { background: #dc3545; color: white; }
+        .call-police { background: #0d6efd; color: white; }
+        .call-fire { background: #fd7e14; color: white; }
+        .safety-tips { background: #fff8e1; border-radius: 10px; padding: 20px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <!-- copy from index.html -->
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-mountain"></i> Mt. Province Tourism</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="map.html">Interactive Map</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="emergency.html">Emergency</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../admin/login.html" target="_blank"><i class="fas fa-lock"></i> Admin</a></li>
+                </ul>
+                <span class="badge bg-warning text-dark ms-3">Guest Mode</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+        <h2 class="section-title"><i class="fas fa-phone-alt"></i> Emergency Contacts</h2>
+        <p class="lead">Important contacts for emergencies in Mountain Province</p>
+
+        <!-- Quick Call Buttons -->
+        <div class="quick-call">
+            <a href="#" class="call-btn call-ambulance" onclick="alert('Ambulance: 911')"><i class="fas fa-ambulance"></i></a>
+            <a href="#" class="call-btn call-police" onclick="alert('Police: 117')"><i class="fas fa-shield-alt"></i></a>
+            <a href="#" class="call-btn call-fire" onclick="alert('Fire: 166')"><i class="fas fa-fire-extinguisher"></i></a>
+        </div>
+
+        <!-- Emergency Cards Grid -->
+        <div class="row g-4">
+            <!-- Medical -->
+            <div class="col-md-6">
+                <div class="card emergency-card emergency-medical h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-hospital fa-2x text-danger me-3"></i>
+                            <div>
+                                <h5 class="card-title mb-0">Medical Emergency</h5>
+                                <small class="text-danger">24/7 Available</small>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><strong>Provincial Hospital:</strong> (074) 309-1001</li>
+                            <li><strong>Sagada Emergency:</strong> (0917) 123-4567</li>
+                            <li><strong>Bontoc Medical Center:</strong> (074) 309-2001</li>
+                            <li><strong>Red Cross:</strong> 143</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Police -->
+            <div class="col-md-6">
+                <div class="card emergency-card emergency-police h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-shield-alt fa-2x text-primary me-3"></i>
+                            <div>
+                                <h5 class="card-title mb-0">Police Assistance</h5>
+                                <small class="text-primary">Emergency Response</small>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><strong>Police Hotline:</strong> 117 or 911</li>
+                            <li><strong>Provincial Police:</strong> (074) 309-3001</li>
+                            <li><strong>Sagada Police:</strong> (0918) 987-6543</li>
+                            <li><strong>Tourist Police:</strong> (074) 309-3002</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Fire -->
+            <div class="col-md-6">
+                <div class="card emergency-card emergency-fire h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-fire-extinguisher fa-2x text-warning me-3"></i>
+                            <div>
+                                <h5 class="card-title mb-0">Fire Department</h5>
+                                <small class="text-warning">Fire & Rescue</small>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><strong>Fire Emergency:</strong> 166</li>
+                            <li><strong>Provincial Fire:</strong> (074) 309-4001</li>
+                            <li><strong>Bontoc Fire Station:</strong> (074) 309-4002</li>
+                            <li><strong>Rescue Hotline:</strong> 911</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Tourism Office -->
+            <div class="col-md-6">
+                <div class="card emergency-card emergency-tourism h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-info-circle fa-2x text-success me-3"></i>
+                            <div>
+                                <h5 class="card-title mb-0">Tourism Assistance</h5>
+                                <small class="text-success">Tourist Support</small>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><strong>Tourism Hotline:</strong> (074) 123-4567</li>
+                            <li><strong>Sagada Tourism:</strong> (0919) 876-5432</li>
+                            <li><strong>Lost & Found:</strong> (074) 123-4568</li>
+                            <li><strong>Email:</strong> tourism@mountainprovince.ph</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Safety Tips -->
+        <div class="safety-tips mt-5">
+            <h4><i class="fas fa-exclamation-triangle text-warning"></i> Important Safety Tips</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul>
+                        <li>Always register at tourist information centers</li>
+                        <li>Hire local guides for hiking and trekking</li>
+                        <li>Follow designated trails and paths</li>
+                        <li>Check weather conditions before outdoor activities</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Carry emergency contact numbers</li>
+                        <li>Inform someone about your itinerary</li>
+                        <li>Respect local customs and traditions</li>
+                        <li>Carry sufficient water and first aid</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer mt-5">
+        <!-- copy from index.html -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Mountain Province Tourism</h5>
+                    <p>Your official guide to the wonders of the Cordilleras.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="map.html">Interactive Map</a></li>
+                        <li><a href="emergency.html">Emergency Contacts</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-phone"></i> (074) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> tourism@mountainprovince.ph</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bontoc, Mountain Province</p>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2024 Mountain Province State University – All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Hanging Coffins",
+    "municipality": "Sagada",
+    "category": "Cultural",
+    "description": "Ancient Igorot burial tradition. Coffins are hung on limestone cliffs to bring the deceased closer to ancestral spirits.",
+    "entrance_fee": "₱100 environmental fee",
+    "operating_hours": "6:00 AM – 5:00 PM",
+    "location": "Echo Valley, Sagada",
+    "lat": 17.0833,
+    "lng": 120.9167,
+    "image": "assets/images/hanging-coffins.jpg",
+    "cultural_protocols": "Respect the site; do not touch coffins; hire a local guide.",
+    "safety_guidelines": "Trail can be slippery; wear sturdy shoes."
+  },
+  {
+    "id": 2,
+    "name": "Sumaguing Cave",
+    "municipality": "Sagada",
+    "category": "Adventure",
+    "description": "Sagada's biggest and most popular cave, known for stunning rock formations and underground river.",
+    "entrance_fee": "₱100 environmental fee + ₱500 guide fee (up to 5 pax)",
+    "operating_hours": "6:00 AM – 5:00 PM",
+    "location": "Sagada",
+    "lat": 17.0722,
+    "lng": 120.9047,
+    "image": "assets/images/sumaguing.jpg",
+    "cultural_protocols": "Considered a sacred place; ask permission before photographing.",
+    "safety_guidelines": "Spelunking requires physical fitness; follow guide instructions."
+  },
+  {
+    "id": 3,
+    "name": "Bontoc Museum",
+    "municipality": "Bontoc",
+    "category": "Cultural",
+    "description": "Museum preserving indigenous heritage, featuring artifacts, textiles, and a reconstructed village.",
+    "entrance_fee": "₱50 (adults), ₱30 (students)",
+    "operating_hours": "8:00 AM – 5:00 PM (Mon-Sat)",
+    "location": "Bontoc, Mountain Province",
+    "lat": 17.0869,
+    "lng": 120.9778,
+    "image": "assets/images/bontoc-museum.jpg",
+    "cultural_protocols": "No photography indoors. Respect the artifacts.",
+    "safety_guidelines": "Follow museum rules."
+  },
+  {
+    "id": 4,
+    "name": "Maligcong Rice Terraces",
+    "municipality": "Bontoc",
+    "category": "Nature",
+    "description": "Beautiful stone-walled rice terraces hand-carved by the Bontoc people.",
+    "entrance_fee": "Free (donation appreciated)",
+    "operating_hours": "Sunrise to sunset",
+    "location": "Maligcong, Bontoc",
+    "lat": 17.1064,
+    "lng": 120.9644,
+    "image": "assets/images/maligcong.jpg",
+    "cultural_protocols": "Ask permission before entering private paddies.",
+    "safety_guidelines": "Slippery when wet; stay on paths."
+  }
+]
